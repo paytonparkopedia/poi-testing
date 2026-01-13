@@ -1,0 +1,20 @@
+{
+  "name": "poi-testing",
+  "version": "1.0.0",
+  "description": "Internal web app for testing Parkopedia API endpoints at scale",
+  "private": true,
+  "workspaces": [
+    "server",
+    "worker",
+    "web",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=worker\" \"npm run dev --workspace=web\"",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
